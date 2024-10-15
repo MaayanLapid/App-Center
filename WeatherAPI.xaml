@@ -1,0 +1,42 @@
+﻿<Window x:Class="App_Center.WeatherAPI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:App_Center"
+        mc:Ignorable="d"
+        Title="Weather API" Height="400" Width="1100">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Search-->
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <TextBox x:Name="SearchTextBox" Width="200" Margin="0 0 10 0"/>
+            <Button x:Name="SearchBtn" Content="Search" Click="SearchBtn_Click"/>
+        </StackPanel>
+
+
+        <!-- DataGrid to Display the weather -->
+        <DataGrid x:Name="WeatherDataGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" ColumnWidth="*">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="City Name" Binding="{Binding Location.Name}"/>
+                <DataGridTextColumn Header="Country" Binding="{Binding Location.Country}"/>
+                <DataGridTextColumn Header="Last Updated" Binding="{Binding Current.LastUpdated}"/>
+                <DataGridTextColumn Header="Temperature in Celsius" Binding="{Binding Current.TemperatureCelsius}"/>
+                <DataGridTextColumn Header="Temperature in Fahrenheit" Binding="{Binding Current.TemperatureFahrenheit}"/>
+                <DataGridTextColumn Header="Summary" Binding="{Binding Current.Condition.Text}"/>
+                <DataGridTemplateColumn Header="Icon">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Current.Condition.Icon}" Width="50" Height="30" Stretch="Uniform"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="button" Content="Back To Main Page" HorizontalAlignment="Left" Margin="282,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.24,0.999" Click="backToMainPage_button_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,120 @@
+﻿<Window x:Class="App_Center.TicTacToeGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Tic Tac Toe" Height="550" Width="500"
+        Background="#F0F0F0">
+    <Window.Resources>
+        <Style x:Key="GameButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="48"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="#333333"/>
+            <Setter Property="BorderBrush" Value="#CCCCCC"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title and Back Button in the same line -->
+        <Grid Grid.Row="0" Background="#4CAF50" Margin="10,0,10,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <!-- Back button column -->
+                <ColumnDefinition Width="*" />
+                <!-- Title column -->
+            </Grid.ColumnDefinitions>
+
+            <!-- Back Button -->
+            <Button x:Name="BackButton" 
+                    Content="Back to Main Page" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Center" 
+                    Margin="10,0,0,0"
+                    Padding="10,5" 
+                    FontSize="16" 
+                    FontWeight="SemiBold" 
+                    Background="#4EC9B0" 
+                    Foreground="#1E1E1E" 
+                    BorderBrush="Transparent"
+                    Click="backToMainPage_button_Click"
+                    Grid.Column="0">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="10" 
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <!-- Title Text -->
+            <TextBlock Text="Tic Tac Toe" 
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Center" 
+                       FontSize="28" 
+                       FontWeight="Bold" 
+                       Foreground="White" 
+                       Grid.Column="1" />
+        </Grid>
+
+        <!-- Game content -->
+        <Grid Grid.Row="1" Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Player 1: X | Player 2: O" 
+                       HorizontalAlignment="Center" 
+                       Margin="0,0,0,20" 
+                       FontSize="18" 
+                       FontWeight="SemiBold" 
+                       Foreground="#333333"/>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Buttons for the Tic Tac Toe board -->
+                <Button x:Name="Button1" Grid.Row="0" Grid.Column="0" Style="{StaticResource GameButtonStyle}" Click="Button_Click"/>
+                <Button x:Name="Button2" Grid.Row="0" Grid.Column="1" Style="{StaticResource GameButtonStyle}" Click="Button_Click"/>
+                <Button x:Name="Button3" Grid.Row="0" Grid.Column="2" Style="{StaticResource GameButtonStyle}" Click="Button_Click"/>
+                <Button x:Name="Button4" Grid.Row="1" Grid.Column="0" Style="{StaticResource GameButtonStyle}" Click="Button_Click"/>
+                <Button x:Name="Button5" Grid.Row="1" Grid.Column="1" Style="{StaticResource GameButtonStyle}" Click="Button_Click"/>
+                <Button x:Name="Button6" Grid.Row="1" Grid.Column="2" Style="{StaticResource GameButtonStyle}" Click="Button_Click"/>
+                <Button x:Name="Button7" Grid.Row="2" Grid.Column="0" Style="{StaticResource GameButtonStyle}" Click="Button_Click"/>
+                <Button x:Name="Button8" Grid.Row="2" Grid.Column="1" Style="{StaticResource GameButtonStyle}" Click="Button_Click"/>
+                <Button x:Name="Button9" Grid.Row="2" Grid.Column="2" Style="{StaticResource GameButtonStyle}" Click="Button_Click"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

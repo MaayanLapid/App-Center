@@ -1,0 +1,77 @@
+[
+    {
+        "Category": "Animals",
+        "Names": [
+            "Lion",
+            "Elephant",
+            "Giraffe",
+            "Tiger",
+            "Kangaroo",
+            "Penguin",
+            "Zebra",
+            "Panda",
+            "Dolphin",
+            "Koala"
+        ]
+    },
+    {
+        "Category": "Countries",
+        "Names": [
+            "United States",
+            "Canada",
+            "Germany",
+            "Australia",
+            "Japan",
+            "Brazil",
+            "India",
+            "South Africa",
+            "France",
+            "Italy"
+        ]
+    },
+    {
+        "Category": "Fruits",
+        "Names": [
+            "Apple",
+            "Banana",
+            "Orange",
+            "Strawberry",
+            "Grapes",
+            "Mango",
+            "Pineapple",
+            "Blueberry",
+            "Watermelon",
+            "Peach"
+        ]
+    },
+    {
+        "Category": "Movies",
+        "Names": [
+            "Inception",
+            "The Godfather",
+            "Titanic",
+            "The Dark Knight",
+            "Forrest Gump",
+            "Pulp Fiction",
+            "The Shawshank Redemption",
+            "The Matrix",
+            "Jurassic Park",
+            "Star Wars"
+        ]
+    },
+    {
+        "Category": "Famous_People",
+        "Names": [
+            "Albert Einstein",
+            "Leonardo da Vinci",
+            "Marie Curie",
+            "Nelson Mandela",
+            "Mahatma Gandhi",
+            "Martin Luther King Jr.",
+            "William Shakespeare",
+            "Cleopatra",
+            "Walt Disney",
+            "Steve Jobs"
+        ]
+    }
+]
